@@ -1461,86 +1461,86 @@ select data_pedido,valor from pedido limit 15;
 -- ====================
 -- EX 13 Parte 1
 -- ====================
-select * from cliente where ativo = 1 and id_cliente between 1 and 20;
+select id_cliente, nome, email, ativo from cliente where ativo = 1 and id_cliente between 1 and 20;
 
 -- EX 13 Parte 2
-select * from cliente where ativo = 0 and id_cliente between 1 and 40;
+select id_cliente, nome, email, ativo from cliente where ativo = 0 and id_cliente between 1 and 40;
 
 -- EX 13 Parte 3
-select * from cliente where data_cadastro between '2025-01-01' and '2025-06-30';
+select id_cliente, nome, email, data_cadastro from cliente where data_cadastro between '2025-01-01' and '2025-06-30';
 
 -- EX 13 Parte 4
-select * from cliente where data_cadastro between '2026-01-01' and '2026-06-30';
+select id_cliente, nome, email, data_cadastro from cliente where data_cadastro between '2026-01-01' and '2026-06-30';
 
 -- ====================
 -- EX 14 Parte 1
 -- ====================
-select * from produto where preco > 2000;
+select id_produto, nome, preco, estoque from produto where preco > 2000;
 
 -- EX 14 Parte 2 
-select * from produto where preco < 80;
+select id_produto, nome, preco, estoque from produto where preco < 80;
 
 -- EX 14 Parte 3
-select * from produto where estoque > 60;
+select id_produto, nome, preco, estoque from produto where estoque > 60;
 
 -- EX 14 Parte 4
-select * from produto where estoque <= 10;
+select id_produto, nome, preco, estoque from produto where estoque <= 10;
 
 -- ====================
 -- EX 15 Parte 1
 -- ====================
-select * from protudo where preco > 500 and estoque < 20;
+select id_produto, nome, preco, estoque from produto where preco > 500 and estoque < 20;
 
 -- EX 15 Parte 2
-select * from cliente where ativo = 1 and data_cadastro like '2025%';
+select id_cliente, nome, email, ativo, data_cadastro from cliente where ativo = 1 and data_cadastro like '2025%';
 
 -- EX 15 Parte 3
-select * from pedido where valor > 3000 and desconto = 10;
+select id_pedido, id_cliente, valor, desconto from pedido where valor > 3000 and desconto = 10;
 
 -- EX 15 Parte 4
-select * from produto where estoque > 30 and preco < 300;
+select id_produto, nome, preco, estoque from produto where estoque > 30 and preco < 300;
 
 -- ====================
 -- EX 16 Parte 1
 -- ====================
-select * from cliente where ativo = 0 or email = null;
+select id_cliente, nome, email, ativo from cliente where ativo = 0 or email is null;
 
 -- EX 16 Parte 2
-select * from produto where preco < 50 or preco > 3000;
+select id_produto, nome, preco, estoque from produto where preco < 50 or preco > 3000;
 
 -- EX 16 Parte 3
-select * from pedido where desconto = 15 or desconto = 20;
+select id_pedido, id_cliente, valor, desconto from pedido where desconto = 15 or desconto = 20;
 
 -- EX 16 Parte 4
-select * from produto where estoque < 10 or estoque > 80;
+select id_produto, nome, preco, estoque from produto where estoque < 10 or estoque > 80;
 
 -- ====================
 -- EX 17 Parte 1
 -- ====================
-select * from cliente where nome like 'A%';
+select id_cliente, nome, email from cliente where nome like 'A%';
 
 -- EX 17 Parte 2
-select * from cliente where nome like 'M%';
+select id_cliente, nome, email from cliente where nome like 'M%';
 
 -- EX 17 Parte 3
-select * from produto where nome like '%USB%';
+select id_produto, nome, preco, estoque from produto where nome like '%USB%';
 
 -- EX 17 Parte 4
-select * from produto where nome like '%Monitor';
+select id_produto, nome, preco, estoque from produto where nome like '%Monitor';
 
 -- EX 17 Parte 5
-select * from cliente where email like '%outlook%' and nome like 'R%';
+select id_cliente, nome, email from cliente where email like '%outlook%' and nome like 'R%';
 
 -- ====================
 -- EX 18 Parte 1
 -- ====================
-select * from cliente where email is null;
+select id_cliente, nome, email, ativo from cliente where email is null;
 
 -- EX 18 Parte 2
-select * from cliente where email is null and ativo = 1;
+select id_cliente, nome, email, ativo from cliente where email is null and ativo = 1;
 
 -- EX 18 Parte 3
-select * from cliente where email is null and ativo = 0; 
+select id_cliente, nome, email, ativo from cliente where email is null and ativo = 0; 
 
 -- EX 18 Parte 4
 select count(*) as clientes_sem_email from cliente where email is null;
@@ -1551,30 +1551,30 @@ select count(*) as clientes_com_email from cliente where email is not null;
 -- ====================
 -- EX 19 Parte 1
 -- ====================
-select * from produto where preco between 400 and 600;
+select id_produto, nome, preco, estoque from produto where preco between 400 and 600;
 
 -- EX 19 Parte 2
-select * from produto where estoque between 10 and 20;
+select id_produto, nome, preco, estoque from produto where estoque between 10 and 20;
 
 -- EX 19 Parte 3
-select * from pedido where valor between 2000 and 3000;
+select id_pedido, id_cliente, valor, desconto from pedido where valor between 2000 and 3000;
 
 -- EX 19 Parte 4
-select * from cliente where data_cadastro between '2025-07-01' and '2025-12-31';
+select id_cliente, nome, email, data_cadastro from cliente where data_cadastro between '2025-07-01' and '2025-12-31';
 
 -- ====================
 -- EX 20 Parte 1
 -- ====================
-select * from produto where id_categoria in (2,4,6);
+select id_produto, nome, preco, estoque, id_categoria from produto where id_categoria in (2,4,6);
 
 -- EX 20 Parte 2
-select * from produto where id_categoria in (9,10,11);
+select id_produto, nome, preco, estoque, id_categoria from produto where id_categoria in (9,10,11);
 
 -- EX 20 Parte 3
-select * from pedido where desconto in (5,15,20);
+select id_pedido, id_cliente, valor, desconto from pedido where desconto in (5,15,20);
 
 -- EX 20 Parte 4
-select * from cliente where id_cliente in (5,10,15,20,25);
+select id_cliente, nome, email, ativo from cliente where id_cliente in (5,10,15,20,25);
 
 -- ====================
 -- EX 21 Parte 1
@@ -1607,44 +1607,44 @@ select id_produto,nome,preco,estoque,id_categoria from produto order by id_categ
 -- ====================
 -- EX 23 Parte 1
 -- ====================
-select * from cliente order by data_cadastro asc limit 5;
+select id_cliente, nome, email, data_cadastro from cliente order by data_cadastro asc limit 5;
 
 -- EX 23 Parte 2
-select * from produto order by preco desc limit 10;
+select id_produto, nome, preco, estoque from produto order by preco desc limit 10;
 
 -- EX 23 Parte 3
-select * from produto order by estoque asc limit 5;
+select id_produto, nome, preco, estoque from produto order by estoque asc limit 5;
 
 -- EX 23 Parte 4
-select * from pedido order by valor desc limit 10;
+select id_produto, nome, preco, desconto from pedido order by valor desc limit 10;
 
 -- ====================
 -- EX 24 Parte 1
 -- ====================
-select * from produto order by id_produto limit 10 offset 0;
+select id_produto, nome, preco, estoque from produto order by id_produto limit 10 offset 0;
 
 -- EX 24 Parte 2
-select * from produto order by id_produto limit 10 offset 10;
+select id_produto, nome, preco, estoque from produto order by id_produto limit 10 offset 10;
 
 -- EX 24 Parte 3
-select * from produto order by id_produto limit 10 offset 20;
+select id_produto, nome, preco, estoque from produto order by id_produto limit 10 offset 20;
 
 -- EX 24 Parte 4
-select * from produto order by id_produto limit 10 offset 40;
+select id_produto, nome, preco, estoque from produto order by id_produto limit 10 offset 40;
 
 -- ====================
 -- EX 25 Parte 1
 -- ====================
-select * from cliente where ativo = 1 and nome like 'M%' limit 15;
+select id_cliente, nome, email, ativo from cliente where ativo = 1 and nome like 'M%' limit 15;
 
 -- EX 25 Parte 2
-select * from produto where preco between 200 and 800 and estoque > 30;
+select id_produto, nome, preco, estoque from produto where preco between 200 and 800 and estoque > 30;
 
 -- EX 25 Parte 3
-select * from pedido where valor > 1000 and desconto in (10,20) order by valor desc limit 20;
+select id_pedido, id_cliente, valor, desconto from pedido where valor > 1000 and desconto in (10,20) order by valor desc limit 20;
 
 -- EX 25 Parte 4
-select * from cliente where email like '%gmail%' and year(data_cadastro) = 2025 order by email;
+select id_cliente, nome, email, data_cadastro from cliente where email like '%gmail%' and year(data_cadastro) = 2025 order by email;
 
 -- ====================
 -- EX 26 Parte 1
@@ -1666,36 +1666,36 @@ select id_produto,nome,preco,estoque from produto where estoque != 0 order by pr
 -- ====================
 -- EX 27 Parte 1
 -- ====================
-select * from cliente where email is null order by nome;
+select id_cliente, nome, email, ativo from cliente where email is null order by nome;
 
 -- EX 27 Parte 2
-select * from produto where estoque <= 10 order by estoque asc;
+select id_produto, nome, preci, estoque from produto where estoque <= 10 order by estoque asc;
 
 -- EX 27 Parte 3
-select * from pedido where desconto = 0 order by valor desc limit 20;
+select id_pedido, id_cliente, valor, desconto from pedido where desconto = 0 order by valor desc limit 20;
 
 -- EX 27 Parte 4
-select * from produto where preco > 3000 order by preco desc;
+select id_produto, nome, preco, estoque from produto where preco > 3000 order by preco desc;
 
 -- EX 27 Parte 5
-select * from cliente where ativo = 0 order by data_cadastro desc;
+select id_cliente, nome, email, ativo, data_cadastro from cliente where ativo = 0 order by data_cadastro desc;
 
 -- ====================
 -- EX 28 Parte 1
 -- ====================
-select * from cliente where email like '%gmail%' order by nome limit 20;
+select id_cliente, nome, email from cliente where email like '%gmail%' order by nome limit 20;
 
 -- EX 28 Parte 2
-select * from cliente where email like '%outlook%' order by nome limit 20;
+select id_cliente, nome, email from cliente where email like '%outlook%' order by nome limit 20;
 
 -- EX 28 Parte 3
-select * from cliente where nome like 'S%' order by nome limit 5;
+select id_pedido, id_cliente, valor, desconto from cliente where nome like 'S%' order by nome limit 5;
 
 -- EX 28 Parte 4
-select * from cliente where year(data_cadastro) = 2026 order by data_cadastro desc;
+select id_produto, nome, preco, estoque from cliente where year(data_cadastro) = 2026 order by data_cadastro desc;
 
 -- EX 28 Parte 5
-select * from cliente where ativo = 1 and nome like 'A%' or nome like 'B%' order by nome;
+select id_cliente, nome, email, ativo, data_cadastro from cliente where ativo = 1 and nome like 'A%' or nome like 'B%' order by nome;
 
 -- ====================
 -- EX 29 Parte 1
